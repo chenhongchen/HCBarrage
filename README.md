@@ -85,4 +85,4 @@ return 100;
 2、cell要继承HCBarrageCell类，弹幕数据模型要继承HCBarrageItem类；
 
 ## 说明：
-参考文章：![https://www.cnblogs.com/ChengYing-Freedom/p/8025210.html](https://www.cnblogs.com/ChengYing-Freedom/p/8025210.html)
+参考文章：[https://www.cnblogs.com/ChengYing-Freedom/p/8025210.html](https://www.cnblogs.com/ChengYing-Freedom/p/8025210.html)
