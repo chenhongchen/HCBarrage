@@ -18,8 +18,9 @@
 #import "KTBarrageCell.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource, HCBarrageViewDelegate>
-@property (nonatomic, strong) HCBarrageView *barrageView;
+@property (nonatomic, weak) HCBarrageView *barrageView;
 @property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation ViewController
@@ -27,28 +28,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 1、初始化
-    _barrageView = [[HCBarrageView alloc] init];
-    [self.view addSubview:_barrageView];
+    HCBarrageView *barrageView = [[HCBarrageView alloc] init];
+    [self.view addSubview:barrageView];
+    _barrageView = barrageView;
     _barrageView.backgroundColor = [UIColor blackColor];
     
-    // 2、配置弹轨
+    // 2、配置弹轨属性
     HCBarrageTrackConfig *config = [[HCBarrageTrackConfig alloc] init];
     config.velocity = 100;
     config.spacing = 30;
     _barrageView.trackConfig = config;
+    
+    // 3、设置弹轨size
     HCBarrageTracksSize *trackSize = [[HCBarrageTracksSize alloc] init];
     trackSize.trackCount = 3;
     trackSize.trackHeight = 50;
     _barrageView.tracksSize = trackSize;
     
-    // 3、适配尺寸
+    // 4、适配尺寸
     [_barrageView sizeToFit];
     CGRect rect = _barrageView.frame;
     rect.origin.y = 20;
     _barrageView.frame = rect;
     
-    // 4、设置代理
+    // 5、设置代理
     _barrageView.delegate = self;
+    
+    // 6、启用弹幕
+    [_barrageView start];
     
     UITableView *tableView = [[UITableView alloc] init];
     [self.view addSubview:tableView];
@@ -64,8 +71,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(sendMessage) userInfo:nil repeats:YES];
-    [timer fire];
+    [_timer invalidate];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(sendMessage) userInfo:nil repeats:YES];
+    [_timer fire];
 }
 
 -(void)sendMessage
@@ -89,11 +97,25 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         UIButton *btn = [[UIButton alloc] init];
-        [btn setTitle:@"刷新数据" forState:UIControlStateNormal];
+        [btn setTitle:@"刷新" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(didClickBtn) forControlEvents:UIControlEventTouchUpInside];
-        btn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 120, 0, 100, 44);
+        btn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 80, 0, 60, 44);
         btn.backgroundColor = [UIColor purpleColor];
         [cell.contentView addSubview:btn];
+        
+        UIButton *stopBtn = [[UIButton alloc] init];
+        [stopBtn addTarget:self action:@selector(didClickStopBtn) forControlEvents:UIControlEventTouchUpInside];
+        [stopBtn setTitle:@"停止" forState:UIControlStateNormal];
+        [cell.contentView addSubview:stopBtn];
+        stopBtn.backgroundColor = [UIColor grayColor];
+        stopBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 160, 0, 60, 44);
+        
+        UIButton *removeBtn = [[UIButton alloc] init];
+        [removeBtn addTarget:self action:@selector(didClickRemoveBtn) forControlEvents:UIControlEventTouchUpInside];
+        [removeBtn setTitle:@"移除" forState:UIControlStateNormal];
+        [cell.contentView addSubview:removeBtn];
+        removeBtn.backgroundColor = [UIColor grayColor];
+        removeBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 240, 0, 60, 44);
     }
     cell.textLabel.text = [NSString stringWithFormat:@"第 %ld 行", indexPath.row];
     return cell;
@@ -121,14 +143,15 @@
     return cell;
 }
 
-- (CGFloat)barrageView:(HCBarrageView *)barrageView widthForItem:(HCBarrageItem *)item
-{
-    return 100;
-}
+//- (CGFloat)barrageView:(HCBarrageView *)barrageView widthForItem:(HCBarrageItem *)item
+//{
+//    return 100;
+//}
 
 #pragma mark - 事件
 - (void)didClickBtn
 {
+    [_barrageView start];
     NSMutableArray *barragesM = [NSMutableArray array];
     for (int i = 0; i < 30; i ++) {
         KTBarrageItem *item = [[KTBarrageItem alloc] init];
@@ -137,5 +160,15 @@
     }
     [_barrageView clearBarrages];
     [_barrageView sendBarrages:barragesM];
+}
+
+- (void)didClickStopBtn
+{
+    [_barrageView stop];
+}
+
+- (void)didClickRemoveBtn
+{
+    [_barrageView removeFromSuperview];
 }
 @end

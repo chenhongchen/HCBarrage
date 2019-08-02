@@ -43,6 +43,12 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self stop];
+//    NSLog(@"dealloc -- HCBarrageView");
+}
+
 #pragma mark - 外部方法
 - (void)setTracksSize:(HCBarrageTracksSize *)tracksSize
 {
@@ -59,6 +65,30 @@
     _trackConfig = trackConfig;
     for (HCBarrageTrackView *trackView in _tracks) {
         trackView.trackConfig = _trackConfig;
+    }
+}
+
+- (HCBarrageCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier
+{
+    NSMutableSet *cellsM = self.reusableCellsDM[identifier];
+    HCBarrageCell *cell = [cellsM anyObject];
+    if (cell) {
+        [cellsM removeObject:cell];
+    }
+    return cell;
+}
+
+- (void)start
+{
+    for (HCBarrageTrackView *trackView in _tracks) {
+        [trackView start];
+    }
+}
+
+- (void)stop
+{
+    for (HCBarrageTrackView *trackView in _tracks) {
+        [trackView stop];
     }
 }
 
@@ -100,16 +130,6 @@
     for (HCBarrageTrackView *trackView in _tracks) {
         [trackView clearBarrages];
     }
-}
-
-- (HCBarrageCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier
-{
-    NSMutableSet *cellsM = self.reusableCellsDM[identifier];
-    HCBarrageCell *cell = [cellsM anyObject];
-    if (cell) {
-        [cellsM removeObject:cell];
-    }
-    return cell;
 }
 
 #pragma mark - 重载

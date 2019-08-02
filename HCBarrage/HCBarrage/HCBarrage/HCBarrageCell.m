@@ -33,6 +33,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+//    NSLog(@"dealloc -- HCBarrageCell");
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];

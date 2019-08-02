@@ -23,6 +23,7 @@
 /** 数据源 */
 @property (nonatomic,retain)NSMutableArray *dataSourcesM;
 @property (nonatomic, weak) HCBarrageCell *lastAnimateCell;
+@property (nonatomic, assign) BOOL isEnabled;
 @end
 
 @implementation HCBarrageTrackView
@@ -40,12 +41,35 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self checkStartAnimatiom];
     }
     return self;
 }
 
+- (void)dealloc
+{
+//    NSLog(@"dealloc -- HCBarrageTrackView");
+}
+
 #pragma mark - 外部方法
+- (void)start
+{
+    if (_isEnabled == YES) {
+        return;
+    }
+    _isEnabled = YES;
+    _minSpaceTime = 1;
+    [self checkStartAnimatiom];
+}
+
+- (void)stop
+{
+    _isEnabled = NO;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(checkStartAnimatiom) object:nil];
+    for (UIView *view in self.subviews) {
+        [view.layer removeAllAnimations];
+    }
+}
+
 - (void)sendOneBarrage:(HCBarrageItem *)barrageItem
 {
     [self.dataSourcesM addObject:barrageItem];
@@ -64,18 +88,16 @@
 #pragma mark - 内部方法
 - (void)checkStartAnimatiom
 {
+    if (_isEnabled == NO) {
+        return;
+    }
     //当有数据信息的时候
     if (self.dataSourcesM.count>0) {
         //开始动画
         [self startAnimation];
     }
-    //延迟执行，在主线程中不能调用sleep()进行延迟执行
     //调用自身方法，构成一个无限循环，不停的轮询检查是否有弹幕数据
-    __weak typeof(self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_minSpaceTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        __strong typeof(self) strongSelf = weakSelf;
-        [strongSelf checkStartAnimatiom];
-    });
+    [self performSelector:@selector(checkStartAnimatiom) withObject:nil afterDelay:_minSpaceTime];
 }
 
 - (void)startAnimation

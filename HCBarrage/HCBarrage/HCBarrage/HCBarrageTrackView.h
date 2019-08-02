@@ -26,6 +26,12 @@
 /// 记录当前最后一个弹幕cell，通过这个cell来计算是显示在哪个弹幕轨道上(暂时未用)
 @property (nonatomic, weak, readonly) HCBarrageCell *lastAnimateCell;
 
+/// 启动弹幕功能
+- (void)start;
+
+/// 停止弹幕功能
+- (void)stop;
+
 /**
  发送一条弹幕
  

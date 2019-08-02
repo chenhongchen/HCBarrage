@@ -29,6 +29,12 @@
 
 - (HCBarrageCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;
 
+/// 启动弹幕功能
+- (void)start;
+
+/// 停止弹幕功能
+- (void)stop;
+
 /**
  发送一条弹幕
 
