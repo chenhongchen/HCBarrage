@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA8CC08922F27445003C4E2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC08822F27445003C4E2E /* AppDelegate.m */; };
+		EA8CC08C22F27445003C4E2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC08B22F27445003C4E2E /* ViewController.m */; };
+		EA8CC08F22F27445003C4E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CC08D22F27445003C4E2E /* Main.storyboard */; };
+		EA8CC09122F27446003C4E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8CC09022F27446003C4E2E /* Assets.xcassets */; };
+		EA8CC09422F27446003C4E2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CC09222F27446003C4E2E /* LaunchScreen.storyboard */; };
+		EA8CC09722F27446003C4E2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC09622F27446003C4E2E /* main.m */; };
+		EA8CC0A122F27446003C4E2E /* HCBarrageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0A022F27446003C4E2E /* HCBarrageTests.m */; };
+		EA8CC0AC22F27446003C4E2E /* HCBarrageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0AB22F27446003C4E2E /* HCBarrageUITests.m */; };
+		EA8CC0E222F3EB6A003C4E2E /* HCBarrageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0D722F3EB6A003C4E2E /* HCBarrageItem.m */; };
+		EA8CC0E322F3EB6A003C4E2E /* HCBarrageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0D922F3EB6A003C4E2E /* HCBarrageCell.m */; };
+		EA8CC0E422F3EB6A003C4E2E /* HCBarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0DA22F3EB6A003C4E2E /* HCBarrageView.m */; };
+		EA8CC0E522F3EB6A003C4E2E /* HCBarrageTrackView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0DC22F3EB6A003C4E2E /* HCBarrageTrackView.m */; };
+		EA8CC0E622F3EB6A003C4E2E /* HCBarrageTracksSize.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0DF22F3EB6A003C4E2E /* HCBarrageTracksSize.m */; };
+		EA8CC0E722F3EB6A003C4E2E /* HCBarrageTrackConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0E022F3EB6A003C4E2E /* HCBarrageTrackConfig.m */; };
+		EA8CC0EC22F3EB88003C4E2E /* KTBarrageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0E922F3EB88003C4E2E /* KTBarrageItem.m */; };
+		EA8CC0ED22F3EB88003C4E2E /* KTBarrageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0EA22F3EB88003C4E2E /* KTBarrageCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA8CC09D22F27446003C4E2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA8CC07C22F27445003C4E2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA8CC08322F27445003C4E2E;
+			remoteInfo = HCBarrage;
+		};
+		EA8CC0A822F27446003C4E2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA8CC07C22F27445003C4E2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA8CC08322F27445003C4E2E;
+			remoteInfo = HCBarrage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA8CC08422F27445003C4E2E /* HCBarrage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCBarrage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA8CC08722F27445003C4E2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EA8CC08822F27445003C4E2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EA8CC08A22F27445003C4E2E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EA8CC08B22F27445003C4E2E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA8CC08E22F27445003C4E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA8CC09022F27446003C4E2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA8CC09322F27446003C4E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA8CC09522F27446003C4E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA8CC09622F27446003C4E2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA8CC09C22F27446003C4E2E /* HCBarrageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCBarrageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA8CC0A022F27446003C4E2E /* HCBarrageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCBarrageTests.m; sourceTree = "<group>"; };
+		EA8CC0A222F27446003C4E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA8CC0A722F27446003C4E2E /* HCBarrageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCBarrageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA8CC0AB22F27446003C4E2E /* HCBarrageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCBarrageUITests.m; sourceTree = "<group>"; };
+		EA8CC0AD22F27446003C4E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA8CC0D622F3EB6A003C4E2E /* HCBarrageTrackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBarrageTrackView.h; sourceTree = "<group>"; };
+		EA8CC0D722F3EB6A003C4E2E /* HCBarrageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBarrageItem.m; sourceTree = "<group>"; };
+		EA8CC0D822F3EB6A003C4E2E /* HCBarrageTracksSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBarrageTracksSize.h; sourceTree = "<group>"; };
+		EA8CC0D922F3EB6A003C4E2E /* HCBarrageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBarrageCell.m; sourceTree = "<group>"; };
+		EA8CC0DA22F3EB6A003C4E2E /* HCBarrageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBarrageView.m; sourceTree = "<group>"; };
+		EA8CC0DB22F3EB6A003C4E2E /* HCBarrageTrackConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBarrageTrackConfig.h; sourceTree = "<group>"; };
+		EA8CC0DC22F3EB6A003C4E2E /* HCBarrageTrackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBarrageTrackView.m; sourceTree = "<group>"; };
+		EA8CC0DD22F3EB6A003C4E2E /* HCBarrageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBarrageCell.h; sourceTree = "<group>"; };
+		EA8CC0DE22F3EB6A003C4E2E /* HCBarrageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBarrageItem.h; sourceTree = "<group>"; };
+		EA8CC0DF22F3EB6A003C4E2E /* HCBarrageTracksSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBarrageTracksSize.m; sourceTree = "<group>"; };
+		EA8CC0E022F3EB6A003C4E2E /* HCBarrageTrackConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBarrageTrackConfig.m; sourceTree = "<group>"; };
+		EA8CC0E122F3EB6A003C4E2E /* HCBarrageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBarrageView.h; sourceTree = "<group>"; };
+		EA8CC0E822F3EB88003C4E2E /* KTBarrageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTBarrageCell.h; sourceTree = "<group>"; };
+		EA8CC0E922F3EB88003C4E2E /* KTBarrageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTBarrageItem.m; sourceTree = "<group>"; };
+		EA8CC0EA22F3EB88003C4E2E /* KTBarrageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTBarrageCell.m; sourceTree = "<group>"; };
+		EA8CC0EB22F3EB88003C4E2E /* KTBarrageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTBarrageItem.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA8CC08122F27445003C4E2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA8CC09922F27446003C4E2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA8CC0A422F27446003C4E2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA8CC07B22F27445003C4E2E = {
+			isa = PBXGroup;
+			children = (
+				EA8CC08622F27445003C4E2E /* HCBarrage */,
+				EA8CC09F22F27446003C4E2E /* HCBarrageTests */,
+				EA8CC0AA22F27446003C4E2E /* HCBarrageUITests */,
+				EA8CC08522F27445003C4E2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA8CC08522F27445003C4E2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA8CC08422F27445003C4E2E /* HCBarrage.app */,
+				EA8CC09C22F27446003C4E2E /* HCBarrageTests.xctest */,
+				EA8CC0A722F27446003C4E2E /* HCBarrageUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA8CC08622F27445003C4E2E /* HCBarrage */ = {
+			isa = PBXGroup;
+			children = (
+				EA8CC0D522F3EB6A003C4E2E /* HCBarrage */,
+				EA8CC08722F27445003C4E2E /* AppDelegate.h */,
+				EA8CC08822F27445003C4E2E /* AppDelegate.m */,
+				EA8CC09022F27446003C4E2E /* Assets.xcassets */,
+				EA8CC09522F27446003C4E2E /* Info.plist */,
+				EA8CC0E822F3EB88003C4E2E /* KTBarrageCell.h */,
+				EA8CC0EA22F3EB88003C4E2E /* KTBarrageCell.m */,
+				EA8CC0EB22F3EB88003C4E2E /* KTBarrageItem.h */,
+				EA8CC0E922F3EB88003C4E2E /* KTBarrageItem.m */,
+				EA8CC09222F27446003C4E2E /* LaunchScreen.storyboard */,
+				EA8CC09622F27446003C4E2E /* main.m */,
+				EA8CC08D22F27445003C4E2E /* Main.storyboard */,
+				EA8CC08A22F27445003C4E2E /* ViewController.h */,
+				EA8CC08B22F27445003C4E2E /* ViewController.m */,
+			);
+			path = HCBarrage;
+			sourceTree = "<group>";
+		};
+		EA8CC09F22F27446003C4E2E /* HCBarrageTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA8CC0A022F27446003C4E2E /* HCBarrageTests.m */,
+				EA8CC0A222F27446003C4E2E /* Info.plist */,
+			);
+			path = HCBarrageTests;
+			sourceTree = "<group>";
+		};
+		EA8CC0AA22F27446003C4E2E /* HCBarrageUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EA8CC0AB22F27446003C4E2E /* HCBarrageUITests.m */,
+				EA8CC0AD22F27446003C4E2E /* Info.plist */,
+			);
+			path = HCBarrageUITests;
+			sourceTree = "<group>";
+		};
+		EA8CC0D522F3EB6A003C4E2E /* HCBarrage */ = {
+			isa = PBXGroup;
+			children = (
+				EA8CC0DD22F3EB6A003C4E2E /* HCBarrageCell.h */,
+				EA8CC0D922F3EB6A003C4E2E /* HCBarrageCell.m */,
+				EA8CC0DE22F3EB6A003C4E2E /* HCBarrageItem.h */,
+				EA8CC0D722F3EB6A003C4E2E /* HCBarrageItem.m */,
+				EA8CC0DB22F3EB6A003C4E2E /* HCBarrageTrackConfig.h */,
+				EA8CC0E022F3EB6A003C4E2E /* HCBarrageTrackConfig.m */,
+				EA8CC0D822F3EB6A003C4E2E /* HCBarrageTracksSize.h */,
+				EA8CC0DF22F3EB6A003C4E2E /* HCBarrageTracksSize.m */,
+				EA8CC0D622F3EB6A003C4E2E /* HCBarrageTrackView.h */,
+				EA8CC0DC22F3EB6A003C4E2E /* HCBarrageTrackView.m */,
+				EA8CC0E122F3EB6A003C4E2E /* HCBarrageView.h */,
+				EA8CC0DA22F3EB6A003C4E2E /* HCBarrageView.m */,
+			);
+			path = HCBarrage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA8CC08322F27445003C4E2E /* HCBarrage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA8CC0B022F27446003C4E2E /* Build configuration list for PBXNativeTarget "HCBarrage" */;
+			buildPhases = (
+				EA8CC08022F27445003C4E2E /* Sources */,
+				EA8CC08122F27445003C4E2E /* Frameworks */,
+				EA8CC08222F27445003C4E2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HCBarrage;
+			productName = HCBarrage;
+			productReference = EA8CC08422F27445003C4E2E /* HCBarrage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA8CC09B22F27446003C4E2E /* HCBarrageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA8CC0B322F27446003C4E2E /* Build configuration list for PBXNativeTarget "HCBarrageTests" */;
+			buildPhases = (
+				EA8CC09822F27446003C4E2E /* Sources */,
+				EA8CC09922F27446003C4E2E /* Frameworks */,
+				EA8CC09A22F27446003C4E2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA8CC09E22F27446003C4E2E /* PBXTargetDependency */,
+			);
+			name = HCBarrageTests;
+			productName = HCBarrageTests;
+			productReference = EA8CC09C22F27446003C4E2E /* HCBarrageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EA8CC0A622F27446003C4E2E /* HCBarrageUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA8CC0B622F27446003C4E2E /* Build configuration list for PBXNativeTarget "HCBarrageUITests" */;
+			buildPhases = (
+				EA8CC0A322F27446003C4E2E /* Sources */,
+				EA8CC0A422F27446003C4E2E /* Frameworks */,
+				EA8CC0A522F27446003C4E2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA8CC0A922F27446003C4E2E /* PBXTargetDependency */,
+			);
+			name = HCBarrageUITests;
+			productName = HCBarrageUITests;
+			productReference = EA8CC0A722F27446003C4E2E /* HCBarrageUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA8CC07C22F27445003C4E2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = CHC;
+				TargetAttributes = {
+					EA8CC08322F27445003C4E2E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					EA8CC09B22F27446003C4E2E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = EA8CC08322F27445003C4E2E;
+					};
+					EA8CC0A622F27446003C4E2E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = EA8CC08322F27445003C4E2E;
+					};
+				};
+			};
+			buildConfigurationList = EA8CC07F22F27445003C4E2E /* Build configuration list for PBXProject "HCBarrage" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA8CC07B22F27445003C4E2E;
+			productRefGroup = EA8CC08522F27445003C4E2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA8CC08322F27445003C4E2E /* HCBarrage */,
+				EA8CC09B22F27446003C4E2E /* HCBarrageTests */,
+				EA8CC0A622F27446003C4E2E /* HCBarrageUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA8CC08222F27445003C4E2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA8CC09422F27446003C4E2E /* LaunchScreen.storyboard in Resources */,
+				EA8CC09122F27446003C4E2E /* Assets.xcassets in Resources */,
+				EA8CC08F22F27445003C4E2E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA8CC09A22F27446003C4E2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA8CC0A522F27446003C4E2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA8CC08022F27445003C4E2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA8CC0E722F3EB6A003C4E2E /* HCBarrageTrackConfig.m in Sources */,
+				EA8CC0E222F3EB6A003C4E2E /* HCBarrageItem.m in Sources */,
+				EA8CC0ED22F3EB88003C4E2E /* KTBarrageCell.m in Sources */,
+				EA8CC08C22F27445003C4E2E /* ViewController.m in Sources */,
+				EA8CC0E622F3EB6A003C4E2E /* HCBarrageTracksSize.m in Sources */,
+				EA8CC0E422F3EB6A003C4E2E /* HCBarrageView.m in Sources */,
+				EA8CC0E522F3EB6A003C4E2E /* HCBarrageTrackView.m in Sources */,
+				EA8CC09722F27446003C4E2E /* main.m in Sources */,
+				EA8CC08922F27445003C4E2E /* AppDelegate.m in Sources */,
+				EA8CC0EC22F3EB88003C4E2E /* KTBarrageItem.m in Sources */,
+				EA8CC0E322F3EB6A003C4E2E /* HCBarrageCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA8CC09822F27446003C4E2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA8CC0A122F27446003C4E2E /* HCBarrageTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA8CC0A322F27446003C4E2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA8CC0AC22F27446003C4E2E /* HCBarrageUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA8CC09E22F27446003C4E2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA8CC08322F27445003C4E2E /* HCBarrage */;
+			targetProxy = EA8CC09D22F27446003C4E2E /* PBXContainerItemProxy */;
+		};
+		EA8CC0A922F27446003C4E2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA8CC08322F27445003C4E2E /* HCBarrage */;
+			targetProxy = EA8CC0A822F27446003C4E2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA8CC08D22F27445003C4E2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA8CC08E22F27445003C4E2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA8CC09222F27446003C4E2E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA8CC09322F27446003C4E2E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA8CC0AE22F27446003C4E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EA8CC0AF22F27446003C4E2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA8CC0B122F27446003C4E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZW4E4Z8PPJ;
+				INFOPLIST_FILE = HCBarrage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CHC.HCBarrage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA8CC0B222F27446003C4E2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZW4E4Z8PPJ;
+				INFOPLIST_FILE = HCBarrage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CHC.HCBarrage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EA8CC0B422F27446003C4E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HCBarrageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CHC.HCBarrageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCBarrage.app/HCBarrage";
+			};
+			name = Debug;
+		};
+		EA8CC0B522F27446003C4E2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HCBarrageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CHC.HCBarrageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCBarrage.app/HCBarrage";
+			};
+			name = Release;
+		};
+		EA8CC0B722F27446003C4E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HCBarrageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CHC.HCBarrageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HCBarrage;
+			};
+			name = Debug;
+		};
+		EA8CC0B822F27446003C4E2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HCBarrageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CHC.HCBarrageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HCBarrage;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA8CC07F22F27445003C4E2E /* Build configuration list for PBXProject "HCBarrage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA8CC0AE22F27446003C4E2E /* Debug */,
+				EA8CC0AF22F27446003C4E2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA8CC0B022F27446003C4E2E /* Build configuration list for PBXNativeTarget "HCBarrage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA8CC0B122F27446003C4E2E /* Debug */,
+				EA8CC0B222F27446003C4E2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA8CC0B322F27446003C4E2E /* Build configuration list for PBXNativeTarget "HCBarrageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA8CC0B422F27446003C4E2E /* Debug */,
+				EA8CC0B522F27446003C4E2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA8CC0B622F27446003C4E2E /* Build configuration list for PBXNativeTarget "HCBarrageUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA8CC0B722F27446003C4E2E /* Debug */,
+				EA8CC0B822F27446003C4E2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA8CC07C22F27445003C4E2E /* Project object */;
+}
