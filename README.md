@@ -1,5 +1,6 @@
 # HCBarrage
-## 1、主要功能：提供单条发送、批量发送、插入弹幕的接口；可设定弹轨数、弹轨高度，可设定弹幕的速度和每条弹幕间的间隙；自定义弹幕cell；目前只支持水平从右到左出弹幕；
+## 1、主要功能：
+提供单条发送、批量发送、插入弹幕的接口；可设定弹轨数、弹轨高度，可设定弹幕的速度和每条弹幕间的间隙；自定义弹幕cell；目前只支持水平从右到左出弹幕；
 
 ## 2、使用：
 ### 2.1、初始化
@@ -50,7 +51,7 @@ return 100;
 }
 ```
 
-### 2.3、发送和清除为发送的弹幕
+### 2.3、发送和清除未发送的弹幕
 ```
 /**
 发送一条弹幕
@@ -79,8 +80,9 @@ return 100;
 - (void)clearBarrages;
 ```
 ## 注意：
--barrageView:widthForItem:这个代理方法没实现，或返回值小于0，则宽取cell.bound.size.width；
-cell要继承HCBarrageCell类，弹幕数据模型要集成HCBarrageItem类；
+1、-barrageView:widthForItem:这个代理方法没实现，或这个方法返回值小于0，则cell的宽取cell.bound.size.width，否则取返回的width；
+
+2、cell要继承HCBarrageCell类，弹幕数据模型要继承HCBarrageItem类；
 
 ## 说明：
-参考文章：![](https://www.cnblogs.com/ChengYing-Freedom/p/8025210.html)
+参考文章：![https://www.cnblogs.com/ChengYing-Freedom/p/8025210.html](https://www.cnblogs.com/ChengYing-Freedom/p/8025210.html)
