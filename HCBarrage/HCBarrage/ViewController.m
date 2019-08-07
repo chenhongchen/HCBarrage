@@ -196,7 +196,7 @@
     
     [_timer invalidate];
     _timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(sendMessage) userInfo:nil repeats:YES];
-    [_timer fire];
+    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
 - (void)didClickPauseBtn

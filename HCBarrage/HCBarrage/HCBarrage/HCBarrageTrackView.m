@@ -147,7 +147,7 @@
         [self startAnimation];
     }
     //调用自身方法，构成一个无限循环，不停的轮询检查是否有弹幕数据
-    [self performSelector:@selector(checkStartAnimatiom) withObject:nil afterDelay:_minSpaceTime];
+    [self performSelector:@selector(checkStartAnimatiom) withObject:nil afterDelay:_minSpaceTime inModes:@[NSRunLoopCommonModes]];
 }
 
 - (void)startAnimation
