@@ -29,6 +29,7 @@
 {
     if (self = [super init]) {
         _reuseIdentifier = reuseIdentifier;
+        self.userInteractionEnabled = NO;
     }
     return self;
 }

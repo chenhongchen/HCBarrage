@@ -15,6 +15,7 @@
 @protocol HCBarrageTrackViewDelegate <NSObject>
 - (HCBarrageCell *)trackView:(HCBarrageTrackView *)trackView cellForItem:(HCBarrageItem *)item;
 - (CGFloat)trackView:(HCBarrageTrackView *)trackView widthForItem:(HCBarrageItem *)item;
+- (void)trackView:(HCBarrageTrackView *)trackView didClickCellForItem:(HCBarrageItem *)item;
 - (void)trackView:(HCBarrageTrackView *)trackView didUnUseForCell:(HCBarrageCell *)cell;
 @end
 
@@ -31,6 +32,12 @@
 
 /// 停止弹幕功能
 - (void)stop;
+
+/// 暂停弹幕
+- (void)pause;
+
+/// 恢复弹幕
+- (void)resume;
 
 /**
  发送一条弹幕

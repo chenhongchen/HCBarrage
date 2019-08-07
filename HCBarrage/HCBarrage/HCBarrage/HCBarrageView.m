@@ -92,6 +92,20 @@
     }
 }
 
+- (void)pause
+{
+    for (HCBarrageTrackView *trackView in _tracks) {
+        [trackView pause];
+    }
+}
+
+- (void)resume
+{
+    for (HCBarrageTrackView *trackView in _tracks) {
+        [trackView resume];
+    }
+}
+
 - (void)sendOneBarrage:(HCBarrageItem *)barrageItem
 {
     if (_tracks.count <= 0) {
@@ -159,6 +173,13 @@
         width = [self.delegate barrageView:self widthForItem:item];
     }
     return width;
+}
+
+- (void)trackView:(HCBarrageTrackView *)trackView didClickCellForItem:(HCBarrageItem *)item
+{
+    if ([self.delegate respondsToSelector:@selector(barrageView:didClickCellForItem:)]) {
+        [self.delegate barrageView:self didClickCellForItem:item];
+    }
 }
 
 - (void)trackView:(HCBarrageTrackView *)trackView didUnUseForCell:(HCBarrageCell *)cell

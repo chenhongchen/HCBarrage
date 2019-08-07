@@ -17,6 +17,7 @@
 @optional
 /// 如果没有实现这个方法，或返回width小于0，则使用cell自身已有的宽度
 - (CGFloat)barrageView:(HCBarrageView *)barrageView widthForItem:(HCBarrageItem *)item;
+- (void)barrageView:(HCBarrageView *)barrageView didClickCellForItem:(HCBarrageItem *)item;
 @end
 
 @interface HCBarrageView : UIView
@@ -34,6 +35,12 @@
 
 /// 停止弹幕功能
 - (void)stop;
+
+/// 暂停弹幕
+- (void)pause;
+
+/// 恢复弹幕
+- (void)resume;
 
 /**
  发送一条弹幕

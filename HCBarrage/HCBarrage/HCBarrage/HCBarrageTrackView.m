@@ -14,6 +14,7 @@
 #define kTV_ScreenW  CGRectGetWidth(kTV_ScreenF)
 
 #import "HCBarrageTrackView.h"
+#import "UIView+HC_BR_Animation.h"
 
 @interface HCBarrageTrackView()
 {
@@ -24,6 +25,7 @@
 @property (nonatomic,retain)NSMutableArray *dataSourcesM;
 @property (nonatomic, weak) HCBarrageCell *lastAnimateCell;
 @property (nonatomic, assign) BOOL isEnabled;
+@property (nonatomic, assign) BOOL isPause;
 @end
 
 @implementation HCBarrageTrackView
@@ -41,6 +43,8 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClickSelf:)];
+        [self addGestureRecognizer:tap];
     }
     return self;
 }
@@ -57,6 +61,7 @@
         return;
     }
     _isEnabled = YES;
+    _isPause = NO;
     _minSpaceTime = 1;
     [self checkStartAnimatiom];
 }
@@ -68,6 +73,29 @@
     for (UIView *view in self.subviews) {
         [view.layer removeAllAnimations];
     }
+}
+
+- (void)pause
+{
+    _isPause = YES;
+    for (UIView *view in self.subviews) {
+        [view pauseAnimation];
+    }
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(checkStartAnimatiom) object:nil];
+}
+
+- (void)resume
+{
+    if (!_isPause) {
+        return;
+    }
+    _isPause = NO;
+    for (UIView *view in self.subviews) {
+        [view resumeAnimation];
+    }
+    CGFloat lastPosition = _lastAnimateCell.layer.presentationLayer.frame.size.width + _lastAnimateCell.layer.presentationLayer.frame.origin.x;
+    _minSpaceTime = ((lastPosition - kTV_ScreenW) + _trackConfig.spacing) / _trackConfig.velocity;
+    [self performSelector:@selector(checkStartAnimatiom) withObject:nil afterDelay:_minSpaceTime];
 }
 
 - (void)sendOneBarrage:(HCBarrageItem *)barrageItem
@@ -83,6 +111,28 @@
 - (void)clearBarrages
 {
     [self.dataSourcesM removeAllObjects];
+}
+
+#pragma mark - 事件
+- (void)didClickSelf:(UITapGestureRecognizer *)gesture
+{
+    //获取点击在self上的位置
+    CGPoint touchPoint = [gesture locationInView:self];
+    for (HCBarrageCell *cell in self.subviews) {
+        if (![cell isKindOfClass:[HCBarrageCell class]]) {
+            continue;
+        }
+        //点击了动画区域
+        if ([cell.layer.presentationLayer hitTest:touchPoint]) {
+            if ([self.delegate respondsToSelector:@selector(trackView:didClickCellForItem:)]) {
+                [self.delegate trackView:self didClickCellForItem:cell.item];
+            }
+        }
+        //点击了动画之外的区域
+        else{
+            
+        }
+    }
 }
 
 #pragma mark - 内部方法
@@ -164,5 +214,4 @@
     //将这个弹幕数据移除
     [self.dataSourcesM removeObject:item];
 }
-
 @end
