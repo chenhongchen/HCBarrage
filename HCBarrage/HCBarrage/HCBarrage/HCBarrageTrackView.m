@@ -14,7 +14,6 @@
 #define kTV_ScreenW  CGRectGetWidth(kTV_ScreenF)
 
 #import "HCBarrageTrackView.h"
-#import "UIView+HC_BR_Animation.h"
 
 @interface HCBarrageTrackView()
 {
@@ -78,8 +77,11 @@
 - (void)pause
 {
     _isPause = YES;
-    for (UIView *view in self.subviews) {
-        [view pauseAnimation];
+    for (HCBarrageCell *cell in self.subviews) {
+        if (![cell isKindOfClass:[HCBarrageCell class]]) {
+            continue;
+        }
+        [cell pauseAnimation];
     }
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(checkStartAnimatiom) object:nil];
 }
@@ -90,8 +92,11 @@
         return;
     }
     _isPause = NO;
-    for (UIView *view in self.subviews) {
-        [view resumeAnimation];
+    for (HCBarrageCell *cell in self.subviews) {
+        if (![cell isKindOfClass:[HCBarrageCell class]]) {
+            continue;
+        }
+        [cell resumeAnimation];
     }
     CGFloat lastPosition = _lastAnimateCell.layer.presentationLayer.frame.size.width + _lastAnimateCell.layer.presentationLayer.frame.origin.x;
     _minSpaceTime = ((lastPosition - kTV_ScreenW) + _trackConfig.spacing) / _trackConfig.velocity;

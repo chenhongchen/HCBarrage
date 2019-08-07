@@ -23,7 +23,6 @@
 		EA8CC0E722F3EB6A003C4E2E /* HCBarrageTrackConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0E022F3EB6A003C4E2E /* HCBarrageTrackConfig.m */; };
 		EA8CC0EC22F3EB88003C4E2E /* KTBarrageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0E922F3EB88003C4E2E /* KTBarrageItem.m */; };
 		EA8CC0ED22F3EB88003C4E2E /* KTBarrageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CC0EA22F3EB88003C4E2E /* KTBarrageCell.m */; };
-		EA95857A22FA619100F75813 /* UIView+HC_BR_Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA95857922FA619100F75813 /* UIView+HC_BR_Animation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +75,6 @@
 		EA8CC0E922F3EB88003C4E2E /* KTBarrageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTBarrageItem.m; sourceTree = "<group>"; };
 		EA8CC0EA22F3EB88003C4E2E /* KTBarrageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTBarrageCell.m; sourceTree = "<group>"; };
 		EA8CC0EB22F3EB88003C4E2E /* KTBarrageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTBarrageItem.h; sourceTree = "<group>"; };
-		EA95857822FA619100F75813 /* UIView+HC_BR_Animation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HC_BR_Animation.h"; sourceTree = "<group>"; };
-		EA95857922FA619100F75813 /* UIView+HC_BR_Animation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HC_BR_Animation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,8 +176,6 @@
 				EA8CC0DC22F3EB6A003C4E2E /* HCBarrageTrackView.m */,
 				EA8CC0E122F3EB6A003C4E2E /* HCBarrageView.h */,
 				EA8CC0DA22F3EB6A003C4E2E /* HCBarrageView.m */,
-				EA95857822FA619100F75813 /* UIView+HC_BR_Animation.h */,
-				EA95857922FA619100F75813 /* UIView+HC_BR_Animation.m */,
 			);
 			path = HCBarrage;
 			sourceTree = "<group>";
@@ -323,7 +318,6 @@
 				EA8CC0E422F3EB6A003C4E2E /* HCBarrageView.m in Sources */,
 				EA8CC0E522F3EB6A003C4E2E /* HCBarrageTrackView.m in Sources */,
 				EA8CC09722F27446003C4E2E /* main.m in Sources */,
-				EA95857A22FA619100F75813 /* UIView+HC_BR_Animation.m in Sources */,
 				EA8CC08922F27445003C4E2E /* AppDelegate.m in Sources */,
 				EA8CC0EC22F3EB88003C4E2E /* KTBarrageItem.m in Sources */,
 				EA8CC0E322F3EB6A003C4E2E /* HCBarrageCell.m in Sources */,

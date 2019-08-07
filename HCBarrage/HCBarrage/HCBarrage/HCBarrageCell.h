@@ -17,4 +17,9 @@
 @property (nonatomic, readonly, copy) NSString *reuseIdentifier;
 @property (nonatomic, strong, readonly) UIView *contentView;
 @property (nonatomic, strong) HCBarrageItem *item;
+
+/// 暂停动画
+- (void)pauseAnimation;
+/// 恢复动画
+- (void)resumeAnimation;
 @end

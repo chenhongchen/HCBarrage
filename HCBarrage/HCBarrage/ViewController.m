@@ -143,7 +143,7 @@
     [_barrageView insertOneBarrage:item];
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - HCBarrageViewDelegate
 - (HCBarrageCell *)barrageView:(HCBarrageView *)barrageView cellForItem:(HCBarrageItem *)item
 {
     static NSString *identifier = @"KTBarrageCell";
