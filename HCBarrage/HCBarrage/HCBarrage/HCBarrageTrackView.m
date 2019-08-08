@@ -76,6 +76,9 @@
 
 - (void)pause
 {
+    if (_isEnabled == NO) {
+        return;
+    }
     _isPause = YES;
     for (HCBarrageCell *cell in self.subviews) {
         if (![cell isKindOfClass:[HCBarrageCell class]]) {
@@ -88,6 +91,9 @@
 
 - (void)resume
 {
+    if (_isEnabled == NO) {
+        return;
+    }
     if (!_isPause) {
         return;
     }
