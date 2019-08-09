@@ -6,12 +6,14 @@
 //  Copyright © 2019 CHC. All rights reserved.
 //
 
-//屏幕的尺寸
+// 屏幕的尺寸
 #define kTV_ScreenF   [[UIScreen mainScreen] bounds]
-//屏幕的高度
+// 屏幕的高度
 #define kTV_ScreenH  CGRectGetHeight(kTV_ScreenF)
-//屏幕的宽度
+// 屏幕的宽度
 #define kTV_ScreenW  CGRectGetWidth(kTV_ScreenF)
+// 默认最小时间间隔
+#define kDefMinSpaceTime 0.35
 
 #import "HCBarrageTrackView.h"
 
@@ -70,7 +72,7 @@
     }
     _isEnabled = YES;
     _isPause = NO;
-    _minSpaceTime = 1;
+    _minSpaceTime = kDefMinSpaceTime;
     [self checkStartAnimatiom];
 }
 
@@ -113,8 +115,13 @@
         }
         [cell resumeAnimation];
     }
-    CGFloat lastPosition = _lastAnimateCell.layer.presentationLayer.frame.size.width + _lastAnimateCell.layer.presentationLayer.frame.origin.x;
-    _minSpaceTime = ((lastPosition - kTV_ScreenW) + _trackConfig.spacing) / _trackConfig.velocity;
+    if (_lastAnimateCell && _lastAnimateCell.superview) {
+        CGFloat lastPosition = _lastAnimateCell.layer.presentationLayer.frame.size.width + _lastAnimateCell.layer.presentationLayer.frame.origin.x;
+        _minSpaceTime = ((lastPosition - kTV_ScreenW) + _trackConfig.spacing) / _trackConfig.velocity;
+    }
+    else {
+        _minSpaceTime = kDefMinSpaceTime;
+    }
     [self performSelector:@selector(checkStartAnimatiom) withObject:nil afterDelay:_minSpaceTime];
 }
 
@@ -165,6 +172,9 @@
     if (self.insertDataSourcesM.count > 0 || self.dataSourcesM.count>0) {
         //开始动画
         [self startAnimation];
+    }
+    else {
+        _minSpaceTime = kDefMinSpaceTime;
     }
     //调用自身方法，构成一个无限循环，不停的轮询检查是否有弹幕数据
     [self performSelector:@selector(checkStartAnimatiom) withObject:nil afterDelay:_minSpaceTime inModes:@[NSRunLoopCommonModes]];
@@ -228,6 +238,7 @@
         rect.origin.x = - rect.size.width;
         cell.frame = rect;
     } completion:^(BOOL finished) {
+        [cell removeFromSuperview];
         //重新加入重用池
         if ([self.delegate respondsToSelector:@selector(trackView:didUnUseForCell:)]) {
             [self.delegate trackView:self didUnUseForCell:cell];
