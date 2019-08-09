@@ -13,7 +13,7 @@
 // 屏幕的宽度
 #define kTV_ScreenW  CGRectGetWidth(kTV_ScreenF)
 // 默认最小时间间隔
-#define kDefMinSpaceTime 0.35
+#define kDefMinSpaceTime 1
 
 #import "HCBarrageTrackView.h"
 
