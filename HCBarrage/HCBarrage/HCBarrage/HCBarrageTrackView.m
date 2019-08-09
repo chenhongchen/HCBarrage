@@ -21,7 +21,8 @@
 }
 
 /** 数据源 */
-@property (nonatomic,retain)NSMutableArray *dataSourcesM;
+@property (nonatomic,strong) NSMutableArray *dataSourcesM;
+@property (nonatomic, strong) NSMutableArray *insertDataSourcesM;
 @property (nonatomic, weak) HCBarrageCell *lastAnimateCell;
 @property (nonatomic, assign) BOOL isEnabled;
 @property (nonatomic, assign) BOOL isPause;
@@ -36,6 +37,14 @@
         _dataSourcesM = [NSMutableArray array];
     }
     return _dataSourcesM;
+}
+
+- (NSMutableArray *)insertDataSourcesM
+{
+    if (_insertDataSourcesM == nil) {
+        _insertDataSourcesM = [NSMutableArray array];
+    }
+    return _insertDataSourcesM;
 }
 
 #pragma mark - 初始化
@@ -116,7 +125,7 @@
 
 - (void)insertOneBarrage:(HCBarrageItem *)barrageItem
 {
-    [self.dataSourcesM insertObject:barrageItem atIndex:0];
+    [self.insertDataSourcesM addObject:barrageItem];
 }
 
 - (void)clearBarrages
@@ -153,7 +162,7 @@
         return;
     }
     //当有数据信息的时候
-    if (self.dataSourcesM.count>0) {
+    if (self.insertDataSourcesM.count > 0 || self.dataSourcesM.count>0) {
         //开始动画
         [self startAnimation];
     }
@@ -168,7 +177,12 @@
     }
     
     // 取出第一条数据
-    HCBarrageItem *item = [self.dataSourcesM firstObject];
+    HCBarrageItem *item = [self.insertDataSourcesM firstObject];
+    [self.insertDataSourcesM removeObject:item];
+    if (item == nil) {
+        item = [self.dataSourcesM firstObject];
+        [self.dataSourcesM removeObject:item];
+    }
     
     // 获取cell
     HCBarrageCell *cell = nil;
@@ -177,8 +191,6 @@
     }
     
     if (![cell isKindOfClass:[HCBarrageCell class]]) {
-        //将这个弹幕数据移除
-        [self.dataSourcesM removeObject:item];
         return;
     }
     
@@ -221,8 +233,5 @@
             [self.delegate trackView:self didUnUseForCell:cell];
         }
     }];
-    
-    //将这个弹幕数据移除
-    [self.dataSourcesM removeObject:item];
 }
 @end
