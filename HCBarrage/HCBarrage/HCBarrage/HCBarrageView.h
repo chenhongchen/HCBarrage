@@ -50,13 +50,6 @@
 - (void)sendOneBarrage:(HCBarrageItem *)barrageItem;
 
 /**
- 插入一条弹幕在第一条
-
- @param barrageItem 一条弹幕数据
- */
-- (void)insertOneBarrage:(HCBarrageItem *)barrageItem;
-
-/**
  发送多条弹幕
 
  @param barrageItems 多条弹幕数据
@@ -67,4 +60,16 @@
  清空弹幕数据
  */
 - (void)clearBarrages;
+
+/**
+ 插入一条弹幕
+ 
+ @param barrageItem 一条弹幕数据
+ */
+- (void)insertOneBarrage:(HCBarrageItem *)barrageItem;
+
+/**
+ 清空插入的弹幕数据
+ */
+- (void)clearInsertBarrages;
 @end

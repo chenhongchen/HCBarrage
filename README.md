@@ -74,7 +74,7 @@ return 100;
 /// 恢复弹幕
 - (void)resume;
 ```
-### 2.4、发送弹幕
+### 2.4、发送弹幕、清除弹幕数据
 ```
 /**
 发送一条弹幕
@@ -84,25 +84,30 @@ return 100;
 - (void)sendOneBarrage:(HCBarrageItem *)barrageItem;
 
 /**
-插入一条弹幕在第一条
+发送多条弹幕
+
+@param barrageItems 多条弹幕数据
+*/
+- (void)sendBarrages:(NSArray <HCBarrageItem *>*)barrageItems;
+
+/**
+清空弹幕数据
+*/
+- (void)clearBarrages;
+```
+### 2.5、插入弹幕、清除插入的弹幕数据
+```
+/**
+插入一条弹幕
 
 @param barrageItem 一条弹幕数据
 */
 - (void)insertOneBarrage:(HCBarrageItem *)barrageItem;
 
 /**
-发送多条弹幕
-
-@param barrageItems 多条弹幕数据
+清空插入的弹幕数据
 */
-- (void)sendBarrages:(NSArray <HCBarrageItem *>*)barrageItems;
-```
-### 2.5、清除未发送的弹幕
-```
-/**
-清空弹幕数据
-*/
-- (void)clearBarrages;
+- (void)clearInsertBarrages;
 ```
 ## 注意：
 1、-barrageView:widthForItem:这个代理方法没实现，或这个方法返回值小于0，则cell的宽取cell.bound.size.width，否则取返回的width；

@@ -58,4 +58,9 @@
  */
 - (void)clearBarrages;
 
+/**
+ 清空插入的弹幕数据
+ */
+- (void)clearInsertBarrages;
+
 @end

@@ -146,6 +146,13 @@
     }
 }
 
+- (void)clearInsertBarrages
+{
+    for (HCBarrageTrackView *trackView in _tracks) {
+        [trackView clearInsertBarrages];
+    }
+}
+
 #pragma mark - 重载
 - (void)sizeToFit
 {

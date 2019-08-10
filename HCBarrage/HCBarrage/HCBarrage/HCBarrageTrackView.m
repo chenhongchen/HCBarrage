@@ -140,6 +140,11 @@
     [self.dataSourcesM removeAllObjects];
 }
 
+- (void)clearInsertBarrages
+{
+    [self.insertDataSourcesM removeAllObjects];
+}
+
 #pragma mark - 事件
 - (void)didClickSelf:(UITapGestureRecognizer *)gesture
 {
