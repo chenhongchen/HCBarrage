@@ -173,20 +173,19 @@
 - (void)didClickInsterBtn
 {
     [_barrageView start];
-    NSMutableArray *barragesM = [NSMutableArray array];
     for (int i = 0; i < 30; i ++) {
         KTBarrageItem *item = [[KTBarrageItem alloc] init];
-        [barragesM addObject:item];
         item.msg = [NSString stringWithFormat:@"插入数据%d", i];
+        [_barrageView insertOneBarrage:item];
     }
-    [_barrageView clearBarrages];
-    [_barrageView sendBarrages:barragesM];
 }
 
 - (void)didClickStopBtn
 {
     [_barrageView stop];
     [_timer invalidate];
+    [_barrageView clearBarrages];
+    [_barrageView clearInsertBarrages];
 }
 
 - (void)didClickStartBtn
