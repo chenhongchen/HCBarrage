@@ -49,6 +49,17 @@
 //    NSLog(@"dealloc -- HCBarrageView");
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    for (HCBarrageTrackView *trackView in _tracks) {
+        CGRect rect = trackView.frame;
+        rect.size.width = CGRectGetWidth(self.frame);
+        trackView.frame = rect;
+    }
+}
+
 #pragma mark - 外部方法
 - (void)setTracksSize:(HCBarrageTracksSize *)tracksSize
 {
